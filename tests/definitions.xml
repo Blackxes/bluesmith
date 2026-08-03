@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?> 
+<models>
+  <!-- Model base -->
+  <model name="model-base" abstract="true">
+    <field name="uid" type="int" primary-key="true" auto-increment="true" />
+    <field name="created_at" type="date" default-value="current_timestamp" />
+    <field name="updated_at" type="date" default-value="current_timestamp" />
+    <field-reference name="wusa" />
+    <vagina name="this-is-the-shit" />
+  </model>
+
+  <model name="display-name">
+    <field name="display_name" type="string" length="255" nullable="false" />
+    <field name="machine_key" type="string" length="255" nullable="false" />
+  </model>
+
+  <!-- Session viewers -->
+  <model name="Viewer" table-name="vs_viewers" extends="model-base">
+    <reference-field name="user_uid" model="User" default="null" />
+    <field name="guest_display_name" type="string" nullable="false" />
+    <field name="guest_username" type="string" unique="true" />
+  </model>
+
+  <!-- Statuses -->
+  <model name="SessionStatus" table-name="vs_session_statuses" extends="model-base|display-name">
+    <field name="description" type="string" />
+  </model>
+
+  <!-- Individual sessions -->
+  <model name="ViewingSession" table-name="vs_viewing_sessions" extends="model-base">
+    <field name="planned_viewing_date" type="date" nullable="false" />
+    <field name="actual_viewing_date" type="date" />
+    <field name="planned_watch_start" type="time" nullable="false" />
+    <field name="actual_watch_start" type="time" />
+  </model>
+
+  <!-- Blueprints of sessions for reoccuring sessions -->
+  <model name="ViewingSessionBlueprint" table-name="vs_viewing_sessions_blueprints" extends="model-base">
+    <field name="planned_viewing_date" type="date" nullable="false" />
+    <field name="planned_watch_start" type="time" nullable="false" />
+    <reference-field name="planned_status_uid" model="SessionStatus" nullable="false" />
+  </model>
+
+  <!-- Changes and updates of a session -->
+  <model name="ViewingSessionStatusLog" table-name="vs_viewing_session_status_logs" extends="model-base">
+    <reference-field name="viewing_session_uid" model="ViewingSession" nullable="false" />
+    <reference-field name="from_status_uid" model="SessionStatus" nullable="false" />
+    <reference-field name="to_status_uid" model="SessionStatus" nullable="false" />
+  </model>
+
+  <!-- Progression log entry for a session -->
+  <model name="ViewingProgression" table-name="vs_viewing_progressions" extends="model-base">
+    <reference-field name="viewing_session_uid" nullable="false" />
+    <field name="watched_episode_number" type="int" nullable="false" />
+    <field name="episode_rating" type="int" />
+  </model>
+
+  <!-- Session viewing statuses // unknown, present, late, absent -->
+  <model name="ViewerStatus" table-name="vs_viewer_statuses" extends="model-base|display-name"></model>
+
+  <!-- Viewer attendance -->
+  <model name="SessionViewersAttendance" table-name="vs_session_viewers_attendence" extends="model-base">
+    <reference-field name="viewing_session_uid" model="ViewingSession" unique-group="unique_session_user" nullable="false" />
+    <reference-field name="viewer_uid" model="Viewer" unique-group="unique_session_user" nullable="false" />
+    <reference-field name="viewer_status_uid" model="ViewerStatus" unique-group="unique_session_user" nullable="false" />
+  </model>
+
+  <!-- Descriptions of common reasons of an attendee to change the viewing behaviour -->
+  <model name="CommonAttendanceChange" table-name="vs_common_attendance_changes" extends="model-base">
+    <field name="description" type="text" nullable="false" />
+  </model>
+
+  <!-- Changes of attendees such as being late or being absent -->
+  <model name="SessionAttendeeLog" table-name="vs_session_attendee_log" extends="model-base">
+    <reference-field name="viewing_session_uid" unique-group="unique_missing_session_user" nullable="false" />
+    <reference-field name="viewer_uid" unique-group="unique_missing_session_user" nullable="false" />
+    <reference-field name="description_uid" unique-group="unique_missing_session_user" nullable="false" />
+    <field name="custom_description" type="text" />
+  </model>
+</models>

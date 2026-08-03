@@ -1,0 +1,24 @@
+
+Process XML
+  Load XML
+  Loop through model definitions created from \simplexml_load_string
+
+  Each SimpleXMLElement has a processor.
+  There is a preprocessor which does the minimum.
+    It converts the element into an array and processes some attributes
+      All attributes are converted into a key=value array
+      Attribute values containing a separator (default: "|") is converted into an array containing the options
+
+  Each node has its own processor.
+    <model {attributes} /> => ModelElementProcessor
+    <field {attributes} /> => FieldElementProcessor
+    <field-reference {attributes} /> ReferenceFieldNodeProcessor
+    etc.
+  
+  "ModelFieldProcessor", "ModelFieldReferenceProcessor"
+
+  Convert into a definition object.
+  That object has all information prepared for processing of further processes
+  such as sql generation or model generation
+
+Pass definition objects into consumers, converters and such to process those definitions
