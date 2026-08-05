@@ -9,7 +9,6 @@ declare(strict_types=1);
 
 namespace Bluesmith\Models;
 
-
 class ModelDefinition extends ModelBase
 {
     public string $name;

@@ -7,10 +7,7 @@
 
 declare(strict_types=1);
 
-namespace Core\DefinitionProcessing;
-
-
-require_once __DIR__ . "/ElementPreProcessorinterface.php";
+namespace Bluesmith\ElementProcessing;
 
 class ElementPreProcessor implements ElementPreProcessorInterface
 {

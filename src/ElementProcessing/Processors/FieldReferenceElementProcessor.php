@@ -7,11 +7,9 @@
 
 declare(strict_types=1);
 
-namespace Core\DefinitionProcessing\ElementProcessors;
+namespace Bluesmith\ElementProcessing\Processors;
 
-use Core\DefinitionProcessing\ElementProcessorInterface;
-
-require_once __DIR__ . "/../ElementProcessorInterface.php";
+use Bluesmith\ElementProcessing\ElementProcessorInterface;
 
 class FieldReferenceElementProcessor implements ElementProcessorInterface
 {

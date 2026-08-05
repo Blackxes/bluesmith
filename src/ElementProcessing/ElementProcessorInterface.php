@@ -5,7 +5,9 @@
  * @Email blackxes.dev@gmail.com
  */
 
-declare (strict_types = 1);
+declare(strict_types=1);
+
+namespace Bluesmith\ElementProcessing;
 
 interface ElementProcessorInterface
 {

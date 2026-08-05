@@ -7,6 +7,10 @@
 
 declare(strict_types=1);
 
+use Bluesmith\ElementProcessing\Processors\FieldElementProcessor;
+use Bluesmith\ElementProcessing\Processors\FieldReferenceElementProcessor;
+use Bluesmith\ElementProcessing\Processors\ModelElementProcessor;
+
 /**
  * @todo Add validation
  */

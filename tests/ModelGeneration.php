@@ -5,7 +5,7 @@
  * @Email blackxes.dev@gmail.com
  */
 
-declare (strict_types = 1);
+declare(strict_types=1);
 
 echo 2;
 

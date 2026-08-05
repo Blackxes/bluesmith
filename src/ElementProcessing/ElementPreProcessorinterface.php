@@ -7,7 +7,7 @@
 
 declare(strict_types=1);
 
-namespace Core\DefinitionProcessing;
+namespace Bluesmith\ElementProcessing;
 
 interface ElementPreProcessorInterface
 {

@@ -7,6 +7,8 @@
 
 declare(strict_types=1);
 
+use Bluesmith\ElementProcessing\ElementPreProcessor;
+
 /**
  * @todo Add validation
  */

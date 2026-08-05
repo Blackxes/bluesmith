@@ -7,10 +7,7 @@
 
 declare(strict_types=1);
 
-namespace Core\DefinitionProcessing\ModelGeneration;
-
-use Core\DefinitionProcessing\FieldTypeDatabaseTypeMapping;
-use Core\ModelBase;
+namespace Bluesmith\Models;
 
 class ModelFieldDefinition extends ModelBase
 {

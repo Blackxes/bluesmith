@@ -7,6 +7,8 @@
 
 declare(strict_types=1);
 
+namespace Bluesmith\Models;
+
 class ModelFieldReferenceDefinition extends ModelBase
 {
     public string $name;

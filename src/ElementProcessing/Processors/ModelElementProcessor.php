@@ -7,8 +7,9 @@
 
 declare(strict_types=1);
 
+namespace Bluesmith\ElementProcessing\Processors;
 
-require_once __DIR__ . "/../ElementProcessorInterface.php";
+use Bluesmith\ElementProcessing\ElementProcessorInterface;
 
 class ModelElementProcessor implements ElementProcessorInterface
 {

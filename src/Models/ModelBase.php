@@ -7,12 +7,14 @@
 
 declare(strict_types=1);
 
-namespace Models;
+namespace Bluesmith\Models;
 
 abstract class ModelBase
 {
-    public static function fromModel(ModelBase $model, array $overrides = [])
-    {
+    public static function fromModel(
+        ModelBase $model,
+        array $overrides = []
+    ) {
         $new = new static();
 
         $commonProperties = array_intersect(

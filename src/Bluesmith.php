@@ -5,7 +5,7 @@
  * @Email blackxes.dev@gmail.com
  */
 
-declare(strict_types=1);
+declare (strict_types = 1);
 
 namespace Bluesmith;
 
@@ -13,21 +13,21 @@ class Bluesmith
 {
     /**
      * Element tag name to processor mapping
-     * 
+     *
      * @var array<string, ElementProcessorInterface>
      */
     private $elementProcessorsConfig = [];
 
     /**
      * Element preprocessor. Processes the element before it gets passed onto the element processors
-     * 
+     *
      * @var ElementPreProcessorInterface
      */
     private $elementPreProcessor = null;
 
     /**
      * Is the parser initialized?
-     * 
+     *
      * @var boolean
      */
     private $initialized = false;
@@ -58,13 +58,15 @@ class Bluesmith
         }
     }
 
-    private function processElement(string $elementName, \SimpleXMLElement $element)
-    {
+    private function processElement(
+        string $elementName,
+        \SimpleXMLElement $element
+    ) {
         $preProcessed = $this->elementPreProcessor::process($element);
 
         /**
          * https://github.com/DEVSENSE/phptools-docs/issues/1068
-         * 
+         *
          * I'm sure it doesn't really matter what I tried typing but I documented it regardless
          */
 
