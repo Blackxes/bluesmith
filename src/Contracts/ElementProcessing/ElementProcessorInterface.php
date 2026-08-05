@@ -7,7 +7,7 @@
 
 declare(strict_types=1);
 
-namespace Bluesmith\ElementProcessing;
+namespace Bluesmith\Contracts\ElementProcessing;
 
 interface ElementProcessorInterface
 {

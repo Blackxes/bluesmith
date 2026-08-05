@@ -9,6 +9,8 @@ declare(strict_types=1);
 
 namespace Bluesmith\ElementProcessing;
 
+use Bluesmith\Contracts\ElementProcessing\ElementPreProcessorInterface;
+
 class ElementPreProcessor implements ElementPreProcessorInterface
 {
     #[\Override]

@@ -9,7 +9,7 @@ declare(strict_types=1);
 
 namespace Bluesmith\ElementProcessing\Processors;
 
-use Bluesmith\ElementProcessing\ElementProcessorInterface;
+use Bluesmith\Contracts\ElementProcessing\ElementProcessorInterface;
 
 class ModelElementProcessor implements ElementProcessorInterface
 {
