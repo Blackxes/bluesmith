@@ -1,11 +1,11 @@
 <?php
 
 /**
- * @Author Alexander Bassov Sat Aug 01 2026
+ * @Author Blackxes Fri Aug 07 2026
  * @Email blackxes.dev@gmail.com
  */
 
-declare (strict_types = 1);
+declare(strict_types=1);
 
 namespace Bluesmith;
 

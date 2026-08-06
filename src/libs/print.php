@@ -1,11 +1,11 @@
 <?php
 
-declare(strict_types=1);
-
 /**
- * @Author Alexander Bassov Fri Feb 20 2026
+ * @Author Blackxes Fri Aug 07 2026
  * @Email blackxes.dev@gmail.com
  */
+
+declare(strict_types=1);
 
 if (!function_exists("debug")) {
     if (php_sapi_name() != "cli") {

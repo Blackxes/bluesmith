@@ -1,7 +1,7 @@
 <?php
 
 /**
- * @Author Alexander Bassov Tue Jun 16 2026
+ * @Author Blackxes Fri Aug 07 2026
  * @Email blackxes.dev@gmail.com
  */
 
