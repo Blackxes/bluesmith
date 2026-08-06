@@ -1,3 +1,4 @@
+name: bluesmith
 services:
   web:
     build: .
