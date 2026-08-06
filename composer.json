@@ -1,7 +1,6 @@
 {
   "name": "conference/bluesmith",
   "description": "Generates php model classes, sql statements and more from an .xml blueprint definition",
-  "require": {},
   "autoload": {
     "psr-4": {
       "Bluesmith\\": "src"
